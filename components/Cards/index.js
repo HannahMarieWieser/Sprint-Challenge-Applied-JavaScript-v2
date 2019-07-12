@@ -4,6 +4,7 @@
 // Stduy the response data you get back, closely.
 // You will be creating a component for each 'article' in the list.
 // This won't be as easy as just iterating over an array though.
+
 // Create a function that will programmatically create the following DOM component:
 //
 // <div class="card">
@@ -17,3 +18,10 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+function createArticle(input){
+    const carddiv = document.createElement('div')
+    const headlinediv = document.createElement('div');
+    const authordiv = document.createElement('div')
+    const imgdiv = document.crea
+}

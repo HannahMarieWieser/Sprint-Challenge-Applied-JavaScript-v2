@@ -11,6 +11,7 @@
 
 const addtab = document.querySelector('.topics')
 
+/*
 const tabdata = [axios.get('https://lambda-times-backend.herokuapp.com/topics')]
 console.log(tabdata)
 
@@ -39,6 +40,20 @@ tabdata.forEach(element => {
     })
 });
 
+*/
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then( element => {
+        element.data.topics.forEach(topic => {
+            addtab.appendChild(createTabs(topic))
+        });
+    })
+    
+    .catch( error => {
+        console.log('error:', error)
+    })
+
+
 
 
 function createTabs(tabdata){
@@ -46,7 +61,7 @@ function createTabs(tabdata){
 
     tabdiv.classList.add('tab')
 
-    tabdiv.textContent = tabdata.topic
+    tabdiv.textContent = tabdata
 
-    return createTabs
+    return tabdiv
 }
